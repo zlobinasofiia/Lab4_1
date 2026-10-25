@@ -6,7 +6,7 @@
 #include <windows.h>
 #endif
 
-//Прототипи
+//РџСЂРѕС‚РѕС‚РёРїРё
 void fill_int_array(unsigned int * A, unsigned int Size);
 void fill_float_array(float * B, unsigned int Size);
 void print_int_array(const unsigned int * A, unsigned int Size);
@@ -19,7 +19,7 @@ double mean_value(const unsigned int * A, unsigned int Size);
 unsigned int find_min(const unsigned int * A, unsigned Size);
 float find_max(const float * B, unsigned int Size);
 
-//Опис функції main()
+//РћРїРёСЃ С„СѓРЅРєС†С–С— main()
 int main()
 {
 #if defined(_WIN32) || defined(_WIN64)
@@ -39,9 +39,9 @@ int main()
     unsigned int min_value;
     float max_value;
 
-    printf("Введіть розмір масиву: ");
+    printf("Р’РІРµРґС–С‚СЊ СЂРѕР·РјС–СЂ РјР°СЃРёРІСѓ: ");
     if (scanf("%u", &Size) != 1 || Size == 0) {
-        printf("Некоректний розмір масиву.\n");
+        printf("РќРµРєРѕСЂРµРєС‚РЅРёР№ СЂРѕР·РјС–СЂ РјР°СЃРёРІСѓ.\n");
         return 1;
     }
 
@@ -49,7 +49,7 @@ int main()
     B = (float *) malloc(Size * sizeof(float));
 
     if (A == NULL || B == NULL) {
-        printf("Пам'ять не було виділено!\n");
+        printf("РџР°Рј'СЏС‚СЊ РЅРµ Р±СѓР»Рѕ РІРёРґС–Р»РµРЅРѕ!\n");
         exit(0);
     }
 
@@ -62,17 +62,17 @@ int main()
     amount = sum(A, Size);
     mult = product(B, Size);
 
-    printf("\n\nСума елементів масиву A = %u", amount);
-    printf("\nДобуток елементів масиву B = %.3lf\n", mult);
+    printf("\n\nРЎСѓРјР° РµР»РµРјРµРЅС‚С–РІ РјР°СЃРёРІСѓ A = %u", amount);
+    printf("\nР”РѕР±СѓС‚РѕРє РµР»РµРјРµРЅС‚С–РІ РјР°СЃРёРІСѓ B = %.3lf\n", mult);
 
     average_value = mean_value(A, Size);
     min_value = find_min(A, Size);
     max_value = find_max(B, Size);
 
-    printf("\n\n--- Результати виконання ЛР 4 (Частина 1) ---");
-    printf("\nСереднє значення елементів масиву A: %.2lf", average_value);
-    printf("\nМінімальне значення елементів масиву A: %u", min_value);
-    printf("\nМаксимальне значення елементів масиву B: %.2f\n", max_value);
+    printf("\n\n--- Р РµР·СѓР»СЊС‚Р°С‚Рё РІРёРєРѕРЅР°РЅРЅСЏ Р›Р  4 (Р§Р°СЃС‚РёРЅР° 1) ---");
+    printf("\nРЎРµСЂРµРґРЅС” Р·РЅР°С‡РµРЅРЅСЏ РµР»РµРјРµРЅС‚С–РІ РјР°СЃРёРІСѓ A: %.2lf", average_value);
+    printf("\nРњС–РЅС–РјР°Р»СЊРЅРµ Р·РЅР°С‡РµРЅРЅСЏ РµР»РµРјРµРЅС‚С–РІ РјР°СЃРёРІСѓ A: %u", min_value);
+    printf("\nРњР°РєСЃРёРјР°Р»СЊРЅРµ Р·РЅР°С‡РµРЅРЅСЏ РµР»РµРјРµРЅС‚С–РІ РјР°СЃРёРІСѓ B: %.2f\n", max_value);
 
     free(A);
     free(B);
@@ -80,8 +80,8 @@ int main()
     return 0;
 }
 
-//Опис Функцій
-// Автоматичне заповнення за формулою: A[j] = Size - (j + 1)
+//РћРїРёСЃ Р¤СѓРЅРєС†С–Р№
+// РђРІС‚РѕРјР°С‚РёС‡РЅРµ Р·Р°РїРѕРІРЅРµРЅРЅСЏ Р·Р° С„РѕСЂРјСѓР»РѕСЋ: A[j] = Size - (j + 1)
 void fill_int_array(unsigned int * A, unsigned int Size)
 {
     unsigned int j;
@@ -90,7 +90,7 @@ void fill_int_array(unsigned int * A, unsigned int Size)
     }
 }
 
-// Автоматичне заповнення за формулою: B[j] = 5.0 * j + 5.0
+// РђРІС‚РѕРјР°С‚РёС‡РЅРµ Р·Р°РїРѕРІРЅРµРЅРЅСЏ Р·Р° С„РѕСЂРјСѓР»РѕСЋ: B[j] = 5.0 * j + 5.0
 void fill_float_array(float * B, unsigned int Size)
 {
     unsigned int j;
@@ -102,7 +102,7 @@ void fill_float_array(float * B, unsigned int Size)
 void print_int_array(const unsigned int * A, unsigned int Size)
 {
     unsigned int j;
-    printf("\n\nМасив цілих чисел без знака (A):\n");
+    printf("\n\nРњР°СЃРёРІ С†С–Р»РёС… С‡РёСЃРµР» Р±РµР· Р·РЅР°РєР° (A):\n");
     for (j = 0; j < Size; j++) {
             printf("%5u", A[j]);
     }
@@ -111,7 +111,7 @@ void print_int_array(const unsigned int * A, unsigned int Size)
 void print_float_array(const float * B, unsigned int Size)
 {
     unsigned int j;
-    printf("\n\nМасив дійсних чисел (B):\n");
+    printf("\n\nРњР°СЃРёРІ РґС–Р№СЃРЅРёС… С‡РёСЃРµР» (B):\n");
     for (j = 0; j < Size; j++) {
             printf("%7.2f", B[j]);
     }
