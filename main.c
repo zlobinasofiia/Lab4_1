@@ -64,26 +64,21 @@ int main()
 }
 
 //Опис Функцій
+// Автоматичне заповнення за формулою: A[j] = Size - (j + 1)
 void fill_int_array(unsigned int * A, unsigned int Size)
 {
-    unsigned int j, temp;
-    printf("\n\nВведіть значення елементів масиву цілих чисел:\n");
+    unsigned int j;
     for (j = 0; j < Size; j++) {
-        printf("A[%u] = ", j);
-        scanf("%u", &temp);
-        A[j] = temp;
+        A[j] = Size - (j + 1);
     }
 }
 
+// Автоматичне заповнення за формулою: B[j] = 5.0 * j + 5.0
 void fill_float_array(float * B, unsigned int Size)
 {
     unsigned int j;
-    float temp;
-    printf("\n\nВведіть значення елементів масиву дійсних чисел:\n");
     for (j = 0; j < Size; j++) {
-        printf("B[%u] = ", j);
-        scanf("%f", &temp);
-        B[j] = temp;
+        B[j] = 5.0f * (float)j + 5.0f;
     }
 }
 
